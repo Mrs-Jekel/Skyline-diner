@@ -1,0 +1,200 @@
+<html>
+<body>
+<script>
+// Bottega Diner
+
+const entrees = {
+    ckn: {
+        name: "Fried Chicken",
+        cost: 11
+    },
+    polishdog: {
+        name: "Polish Sausage",
+        cost: 7
+    },
+    cb: {
+        name: "Bacon Burger",
+        cost: 8
+    },
+    gc: {
+        name: "Grilled Cheese",
+        cost: 9
+    }
+}
+const sides = {
+    fries: {
+        name: "Fries",
+        cost: 11
+    },
+    veggies: {
+        name: "Veggies",
+        cost: 7
+    },
+    salad: {
+        name: "Salad",
+        cost: 8
+    },
+    onionrings: {
+        name: "Onion Rings",
+        cost: 9
+    }
+}
+Welcome();
+function Welcome(){
+    alert("Welcome to Skyline Diner, Here is our menu!");
+    alert(`
+        Menu,
+        Entrees,    
+            ${entrees.ckn.name} - $${entrees.ckn.cost},
+            ${entrees.polishdog.name} - $${entrees.polishdog.cost},
+            ${entrees.cb.name}- $${entrees.cb.cost},
+            ${entrees.gc.name}- $${entrees.gc.cost},
+        Sides,
+            ${sides.fries.name} - $${sides.fries.cost},
+            ${sides.veggies.name} - $${sides.veggies.cost},
+            ${sides.salad.name}- $${sides.salad.cost},
+            ${sides.onionrings.name}- $${sides.onionrings.cost},
+        `);
+        order();
+}
+  
+
+function order(){
+    ordEntree();
+	ordSide1();
+	ordSide2();
+    checkout();
+}
+function ordEntree(){
+
+    var response = [
+        'Wonderful Choice', 
+        'Now that one is yummy', 
+        'Great Choice'
+        ];
+        
+    var randomResponse = response[Math.floor(Math.random() * response.length)];
+
+
+    var entree = prompt(`What can I get you for your Entree?
+        ${entrees.ckn.name} - $${entrees.ckn.cost}
+        ${entrees.polishdog.name} - $${entrees.polishdog.cost}
+        ${entrees.cb.name}- $${entrees.cb.cost}
+        ${entrees.gc.name}- $${entrees.gc.cost}
+    `).toUpperCase();
+    
+    if(entree == "FRIED CHICKEN") {
+        alert(randomResponse);
+        ePrice = entrees.ckn.cost;
+    } 
+    
+    else if(entree == "GRILLED CHEESE") {
+        alert(randomResponse);
+        ePrice = entrees.gc.cost;
+    }
+
+    else if(entree == "POLISH SAUSAGE") {
+        alert(randomResponse);
+        ePrice = entrees.polishdog.cost;
+    } 
+    
+    else if(entree == "BACON BURGER") {
+        alert(randomResponse);
+        ePrice = entrees.cb.cost;
+    } 
+    
+    else {ordEntree();}
+}
+
+function ordSide1(){
+    var response = [
+        "Sounds yummy", 
+        "Thats a fan favorite", 
+        "That is one I would have suggested"
+        ];
+        
+    var randomResponse = response[Math.floor(Math.random() * response.length)];
+
+    var side1 = prompt(`What would like for your first side?
+        ${sides.fries.name} - $${sides.fries.cost}
+        ${sides.veggies.name} - $${sides.veggies.cost}
+        ${sides.salad.name}- $${sides.salad.cost}
+        ${sides.onionrings.name}- $${sides.onionrings.cost}
+    `).toUpperCase();
+
+    if(side1 == "FRIES") {
+        alert(randomResponse);
+        s1Price = sides.fries.cost;
+    }
+
+    else if(side1 == "VEGGIES") {
+        alert(randomResponse);
+        s1Price = sides.veggies.cost;
+    }
+
+    else if(side1 == "SALAD") {
+        alert(randomResponse);
+        s1Price = sides.salad.cost;
+    }
+        
+    else if(side1 == "ONION RINGS") {
+        alert(randomResponse);
+        s1Price = sides.onionrings.cost;
+    }
+
+    else{ordSide1();}
+}
+
+function ordSide2(){
+    var response = [
+        "Double Delicious", 
+        "Way to be a decision maker", 
+        "I think you will love that one"
+        ];
+        
+    var randomResponse = response[Math.floor(Math.random() * response.length)];
+
+    var side2 = prompt(`What would like for your second side?
+
+        ${sides.fries.name} - $${sides.fries.cost}
+        ${sides.veggies.name} - $${sides.veggies.cost}
+        ${sides.salad.name}- $${sides.salad.cost}
+        ${sides.onionrings.name}- $${sides.onionrings.cost}
+    `).toUpperCase();
+
+    if(side2 == "FRIES") {
+        alert(randomResponse);
+        s2Price = sides.fries.cost;
+    }
+
+    else if(side2 == "VEGGIES") {
+        alert(randomResponse);
+        s2Price = sides.veggies.cost;
+    }
+
+    else if(side2 == "SALAD") {
+        alert(randomResponse);
+        s2Price = sides.salad.cost;
+    }
+        
+    else if(side2 == "ONION RINGS") {
+        alert(randomResponse);
+        s2Price = sides.onionrings.cost;
+    }
+
+    else{ordSide2();}
+}
+
+function checkout(){
+	alert("Here is your check! ;)");
+	
+
+    var total = parseFloat(ePrice + s1Price + s2Price).toFixed(2);
+
+    alert("Your Total is " + total + ". Thanks for coming in and have a great day!")
+}
+
+</script>
+</body>
+</html>
+
